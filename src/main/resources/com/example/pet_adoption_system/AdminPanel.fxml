@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pet_adoption_system.AdminController">
+
+    <VBox spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+        <Label alignment="CENTER" maxWidth="Infinity" prefHeight="56.0" style="-fx-background-color: #4CAF50;" text="Admin Panel" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+
+        <Button fx:id="btnViewRequests" maxWidth="Infinity" prefHeight="45.0" style="-fx-background-color: #FF9800;" text="📄 View Adoption Requests" textFill="WHITE">
+            <VBox.margin>
+                <Insets left="12.0" right="12.0" top="12.0" />
+            </VBox.margin>
+        </Button>
+
+        <ListView fx:id="listPets" VBox.vgrow="ALWAYS">
+            <VBox.margin>
+                <Insets bottom="60.0" left="10.0" right="10.0" />
+            </VBox.margin>
+        </ListView>
+    </VBox>
+
+    <Button fx:id="btnLogout" layoutX="12.0" layoutY="540.0" prefHeight="40.0" style="-fx-background-color: #F44336;" text="Logout" textFill="WHITE" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="12.0" />
+
+    <Button fx:id="btnAddPet" layoutX="320.0" layoutY="530.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #4CAF50; -fx-background-radius: 30; -fx-font-size: 24;" text="+" textFill="WHITE" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0">
+        <tooltip>
+            <Tooltip text="Add New Pet" />
+        </tooltip>
+    </Button>
+
+</AnchorPane>

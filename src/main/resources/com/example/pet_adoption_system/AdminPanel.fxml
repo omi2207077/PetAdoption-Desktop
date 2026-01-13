@@ -15,22 +15,47 @@
             </font>
         </Label>
 
-        <Button fx:id="btnViewRequests" maxWidth="Infinity" prefHeight="45.0" style="-fx-background-color: #FF9800;" text="📄 View Adoption Requests" textFill="WHITE">
+        <Button fx:id="btnViewRequests"
+                onAction="#handleViewRequests"
+                maxWidth="Infinity"
+                prefHeight="45.0"
+                style="-fx-background-color: #FF9800; -fx-font-weight: bold; -fx-cursor: hand;"
+                text="📄 View Adoption Requests"
+                textFill="WHITE">
             <VBox.margin>
                 <Insets left="12.0" right="12.0" top="12.0" />
             </VBox.margin>
         </Button>
 
-        <ListView fx:id="listPets" VBox.vgrow="ALWAYS">
+        <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent; -fx-background: white;">
+            <content>
+                <VBox fx:id="petListContainer" spacing="10.0">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                </VBox>
+            </content>
             <VBox.margin>
                 <Insets bottom="60.0" left="10.0" right="10.0" />
             </VBox.margin>
-        </ListView>
+        </ScrollPane>
     </VBox>
 
-    <Button fx:id="btnLogout" layoutX="12.0" layoutY="540.0" prefHeight="40.0" style="-fx-background-color: #F44336;" text="Logout" textFill="WHITE" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="12.0" />
+    <Button fx:id="btnLogout"
+            onAction="#handleLogout"
+            layoutX="12.0" layoutY="540.0"
+            prefHeight="40.0"
+            style="-fx-background-color: #F44336;"
+            text="Logout" textFill="WHITE"
+            AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="12.0" />
 
-    <Button fx:id="btnAddPet" layoutX="320.0" layoutY="530.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #4CAF50; -fx-background-radius: 30; -fx-font-size: 24;" text="+" textFill="WHITE" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0">
+    <Button fx:id="btnAddPet"
+            onAction="#handleAddPet"
+            layoutX="320.0" layoutY="530.0"
+            prefHeight="60.0" prefWidth="60.0"
+            style="-fx-background-color: #4CAF50; -fx-background-radius: 30; -fx-font-size: 24;"
+            text="+" textFill="WHITE"
+            AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0">
         <tooltip>
             <Tooltip text="Add New Pet" />
         </tooltip>

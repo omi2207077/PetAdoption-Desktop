@@ -10,21 +10,28 @@ import java.io.IOException;
 
 public class SceneLoader {
 
+
     public static void load(ActionEvent event, String fxmlFile, String title) {
+        Node node = (Node) event.getSource();
+        loadFromNode(node, fxmlFile, title);
+    }
+
+
+    public static FXMLLoader loadFromNode(Node node, String fxmlFile, String title) {
         try {
+            FXMLLoader loader = new FXMLLoader(SceneLoader.class.getResource("/com/example/pet_adoption_system/" + fxmlFile));
+            Parent root = loader.load();
 
-            Parent root = FXMLLoader.load(SceneLoader.class.getResource("/" + fxmlFile));
-
-
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-
+            Stage stage = (Stage) node.getScene().getWindow();
             stage.setTitle(title);
             stage.setScene(new Scene(root));
             stage.show();
+
+            return loader;
         } catch (IOException e) {
+            System.out.println("Could not load FXML: " + fxmlFile);
             e.printStackTrace();
-            System.out.println("Could not load FXML file: " + fxmlFile);
+            return null;
         }
     }
 }

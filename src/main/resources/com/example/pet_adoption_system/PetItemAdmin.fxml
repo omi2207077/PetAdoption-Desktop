@@ -9,6 +9,7 @@
 <?import javafx.scene.paint.Color?>
 
 <HBox fx:id="root"
+      fx:controller="com.example.pet_adoption_system.PetItemController"
       alignment="CENTER_LEFT"
       spacing="10.0"
       style="-fx-background-color: white; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: rgba(0, 0, 0, 0.36); -fx-border-width: 1;"
